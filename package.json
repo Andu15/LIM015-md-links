@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "marked": "^3.0.4"
+    "marked": "^3.0.4",
+    "node-fetch": "^2.6.1"
   },
   "keywords": [
     "markdown",

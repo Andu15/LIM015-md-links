@@ -2,8 +2,7 @@
 const { pathExist, pathAbsolute,
   pathIsDirectory, readDirectory, extIsMd, readFile, concatRoute } = require('./path.js');
 const marked = require('marked');
-
-// const chalk = require('chalk');
+const fetch = require('node-fetch');
 
 // función recursiva para detectar archivos .md
 const traverseDirectoryFindFiles = (route) => {
@@ -37,12 +36,40 @@ const traverseFilesToFindLinks = (route) => {
     marked(md, { renderer });
   });
   return arrLinks;
-}
+};
 
-// console.log(traverseFilesToFindLinks('lib/mdLinks.md'));
+// funcion con fetch(antes XMLHttpRequest) (con validate true)
+const validateStatus = (route) => {
+  return traverseFilesToFindLinks(route).map((objPropLink) => {
+    // console.log(objPropLink); OBJETO CON HREF(HTTPS), TITLE(NAME), TEXT(RUTA-FILE)
+    return fetch(objPropLink.href)
+      .then((res) => {
+        const objRes = {
+          href: objPropLink.href,
+          text: objPropLink.title,
+          file: objPropLink.text,
+          status: res.status,
+          message: (res.status >= 200 && res.status <= 299) ? 'ok' : 'fail',
+        }
+        return objRes;
+      })
+      .catch((err) => {
+        const objErr = {
+          href: objPropLink.href,
+          text: objPropLink.title,
+          file: objPropLink.text,
+          status: err.status,
+          message: 'Error request:' + err.statusText,
+        }
+        return objErr;
+      });
+  });
+};
 
+// console.log(validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/mdlinks.md'));
 
 module.exports = {
   traverseDirectoryFindFiles,
   traverseFilesToFindLinks,
+  validateStatus, 
 }

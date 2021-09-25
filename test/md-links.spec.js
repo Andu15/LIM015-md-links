@@ -1,6 +1,6 @@
 const { pathExist, pathAbsolute, pathIsDirectory,
   readDirectory, extIsMd, readFile, concatRoute } = require('../src/path');
-const { traverseDirectoryFindFiles, traverseFilesToFindLinks } = require('../src/mdLinksApi');
+const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('../src/mdLinksApi');
 
 describe('pathExist', () => {
   it('Debería ser una función', () => {
@@ -115,6 +115,22 @@ describe('traverseFilesToFindLinks', () => {
     expect(traverseFilesToFindLinks('lib/mdLinks.md')).toEqual(result);
   });
   it('Debería retornar vacio si no hay links', () => {
-    expect(traverseFilesToFindLinks('lib/prueba/prueba.md')).toEqual([]);
+    expect(traverseFilesToFindLinks('lib/prueba/prueba2/prueba2.md')).toEqual([]);
+  });
+});
+
+describe('validateStatus', () => {
+  it('Debería ser una promesa', () => {
+    expect(typeof validateStatus).toBe('function');
+  });
+  it('Debería salir OK', () => {
+    const result = {
+      href: 'https://nodejs.org/es/',
+      text: 'Node.js',
+      file: '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md',
+      status: 200,
+      message: 'ok',
+    }
+    return validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md').resolves.toBe(result);
   });
 });

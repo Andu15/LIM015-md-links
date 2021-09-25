@@ -1,9 +1,6 @@
 // Desde este archivo debes exportar una función (mdLinks).
 // import { existsSync } from 'fs';
-const fs = require('fs');
-// const chalk = require('chalk');
 
-// console.log(global);
 
 // console.log(process.env.NOMBRE);
 
