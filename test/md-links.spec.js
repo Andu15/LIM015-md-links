@@ -1,6 +1,6 @@
 const { pathExist, pathAbsolute, pathIsDirectory,
-  readDirectory, extIsMd, readFile, concatRoute } = require('../src/path');
-const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('../src/mdLinksApi');
+  readDirectory, extIsMd, readFile, concatRoute } = require('../src/apiMdLinks/path');
+const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('../src/apiMdLinks/mdLinksApi');
 
 describe('pathExist', () => {
   it('Debería ser una función', () => {
@@ -86,7 +86,8 @@ describe('traverseDirectoryFindFiles', () => {
       '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/READMELAB.md',
       '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/mdlinks.md',
       '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md',
-      '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba2/prueba2.md'
+      '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba2/prueba2.md',
+      '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba2/prueba3.md'
     ]
     expect(traverseDirectoryFindFiles('lib')).toEqual(result);
   });
@@ -131,6 +132,16 @@ describe('validateStatus', () => {
       status: 200,
       message: 'ok',
     }
-    return validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md').resolves.toBe(result);
+    expect(validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md')).resolves.toEqual([result]);
   });
+  it('Debería indicar FAIL', () => {
+    const result = {
+      href: 'https://nodejs.org/es/400',
+      text: 'Node.js',
+      file: '/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba2/prueba3.md',
+      status: 404,
+      message: 'fail',
+    }
+    expect(validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba2/prueba3.md')).resolves.toEqual([result]);
+  })
 });
