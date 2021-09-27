@@ -1,6 +1,6 @@
 // traer el modulo de path
 const { pathExist, pathAbsolute,
-  pathIsDirectory, readDirectory, extIsMd, readFile, concatRoute } = require('./path.js.js.js.js');
+  pathIsDirectory, readDirectory, extIsMd, readFile, concatRoute } = require('./path.js');
 const marked = require('marked');
 const fetch = require('node-fetch');
 

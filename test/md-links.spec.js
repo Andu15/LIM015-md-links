@@ -1,6 +1,6 @@
 const { pathExist, pathAbsolute, pathIsDirectory,
-  readDirectory, extIsMd, readFile, concatRoute } = require('../src/apiMdLinks/path');
-const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('../src/apiMdLinks/mdLinksApi');
+  readDirectory, extIsMd, readFile, concatRoute } = require('../src/api/path');
+const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('../src/api/mdLinksApi');
 
 describe('pathExist', () => {
   it('Debería ser una función', () => {

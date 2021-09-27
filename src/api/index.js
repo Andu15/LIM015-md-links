@@ -1,5 +1,5 @@
 // Desde este archivo debes exportar una función (mdLinks).
-const { pathExist } = require('./path.js.js.js.js');
+const { pathExist } = require('./path.js');
 const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('./mdLinksApi.js');
 
 /// OBTENER RUTA
