@@ -49,7 +49,7 @@ const validateStatus = (route) => {
           text: objPropLink.title,
           file: objPropLink.text,
           status: res.status,
-          message: (res.status >= 200 && res.status <= 299) ? 'ok' : 'fail',
+          message: (res.status >= 200 && res.status <= 399) ? 'ok' : 'fail',
         }
         return objRes;
       })
@@ -67,7 +67,7 @@ const validateStatus = (route) => {
   return Promise.all(fetchPromises);
 };
 
-// validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/READMELAB.md')
+// validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/prueba/prueba.md')
 //   .then(resolve => console.log(resolve))
 //   .catch(reject => console.log(reject))
 

@@ -2,10 +2,7 @@
 const { pathExist } = require('./path.js');
 const { traverseDirectoryFindFiles, traverseFilesToFindLinks, validateStatus } = require('./mdLinksApi.js');
 
-/// OBTENER RUTA
-// const route = process.argv[2];
-
-function mdLinks(path, options) {
+const mdLinks = (path, options) => {
   return new Promise(function (resolve, reject) {
     if (pathExist(path)) {
       if (traverseDirectoryFindFiles(path).length !== 0) {
@@ -33,6 +30,6 @@ function mdLinks(path, options) {
 //   .then(resolve => console.log(resolve))
 //   .catch(reject => console.log(reject))
 
-module.exports = () => {
+module.exports = {
   mdLinks
 };

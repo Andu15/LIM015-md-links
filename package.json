@@ -1,8 +1,8 @@
 {
   "name": "andu15-mdlinks",
   "version": "0.1.0",
-  "description": "La función mdLinks te permitira verificar si existen archivos markdown y te devolverá un status acorde a la resolución de la promesa",
-  "main": "index.js",
+  "description": "La función mdLinks te permitira verificar si existen archivos markdown y te devolverá un status acorde a los links que contenga",
+  "main": "src/api/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -32,8 +32,14 @@
     "node-fetch": "^2.6.1"
   },
   "keywords": [
+    "md",
     "markdown",
     "promises",
-    "nodejs"
-  ]
+    "nodejs",
+    "link",
+    "command"
+  ],
+  "bin": {
+    "md-links": "src/cli/cli.js"
+  }
 }
