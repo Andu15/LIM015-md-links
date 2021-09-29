@@ -34,4 +34,6 @@ const mdLinks = require('andu15-mdlinks');
 
 ### Importante!
 Todo lo relevante para que cualquier developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
-------
+### Autor
+███▓▒░░ .ANDREA BLANCO. ░░▒▓███  
+
