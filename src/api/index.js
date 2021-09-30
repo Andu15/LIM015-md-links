@@ -26,7 +26,7 @@ const mdLinks = (path, options) => {
   });
 };
 
-// mdLinks('lib/prueba/prueba.md', { validate: false })
+// mdLinks('lib/prueba/prueba5.md', { validate: false })
 //   .then(resolve => console.log(resolve))
 //   .catch(reject => console.log(reject))
 

@@ -1,5 +1,5 @@
 // traer el modulo de path
-const { pathExist, pathAbsolute,
+const { pathAbsolute,
   pathIsDirectory, readDirectory, extIsMd, readFile, concatRoute } = require('./path.js');
 const marked = require('marked');
 const fetch = require('node-fetch');
@@ -45,6 +45,7 @@ const validateStatus = (route) => {
     // console.log(objPropLink); OBJETO CON HREF(HTTPS), TITLE(NAME), TEXT(RUTA-FILE)
     return fetch(objPropLink.href)
       .then((res) => {
+        // console.log(res, 48);
         const objRes = {
           href: objPropLink.href,
           text: objPropLink.title,
@@ -68,7 +69,7 @@ const validateStatus = (route) => {
   return Promise.all(fetchPromises);
 };
 
-// validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/READMELAB.md')
+// validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/mdlinks.md')
 //   .then(resolve => console.log(resolve))
 //   .catch(reject => console.log(reject))
 

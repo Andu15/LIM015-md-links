@@ -81,7 +81,7 @@ if (myArgs.length === 3) {
 }
 
 // si tiene mas de 2 comandos
-if (myArgs.length >= 3) {
+if (myArgs.length > 3) {
   console.error(chalk.white.bgRed.bold('Haz excedido el número de argumentos permitidos'));
   console.log(chalk.yellow(otherReject));
 }
