@@ -1,5 +1,5 @@
 // traer el modulo de path
-const { pathExist, pathAbsolute,
+const { pathAbsolute,
   pathIsDirectory, readDirectory, extIsMd, readFile, concatRoute } = require('./path.js');
 const marked = require('marked');
 const fetch = require('node-fetch');
@@ -39,11 +39,13 @@ const traverseFilesToFindLinks = (route) => {
 };
 
 // funcion con fetch(antes XMLHttpRequest) (con validate true)
+// falta la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link---
 const validateStatus = (route) => {
   const fetchPromises = traverseFilesToFindLinks(route).map((objPropLink) => {
     // console.log(objPropLink); OBJETO CON HREF(HTTPS), TITLE(NAME), TEXT(RUTA-FILE)
     return fetch(objPropLink.href)
       .then((res) => {
+        // console.log(res, 48);
         const objRes = {
           href: objPropLink.href,
           text: objPropLink.title,
@@ -67,9 +69,9 @@ const validateStatus = (route) => {
   return Promise.all(fetchPromises);
 };
 
-validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/READMELAB.md')
-  .then(resolve => console.log(resolve))
-  .catch(reject => console.log(reject))
+// validateStatus('/Users/katy/Desktop/LABORATORIA-ANDREA/LIM015-md-links/lib/mdlinks.md')
+//   .then(resolve => console.log(resolve))
+//   .catch(reject => console.log(reject))
 
 module.exports = {
   traverseDirectoryFindFiles,
