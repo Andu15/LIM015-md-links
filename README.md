@@ -113,6 +113,6 @@ Esta librería esta hecha en node.js en conjunto con CommonJS Modules, es decir,
 * ___Inicio del proyecto:___ 08/09/2021  
 * ___Fin del proyecto:___ 30/09/2021
 ### Autor 🔏
-███▓▒░░  ANDREA BLANCO . ░░▒▓███  
-[Andu15](https://github.com/Andu15)
+███▓▒░░ [Andu15](https://github.com/Andu15) ░░▒▓███  
+
 
