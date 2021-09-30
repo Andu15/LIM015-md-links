@@ -5,13 +5,12 @@
 [3. Ejemplos:](#3-investigacion-UX)  
 [4. Importante:](#4-objetivos-generales-logrados)  
 ***
-se usara CommonJS Modules, es decir, require/module.exports
 ### Preambulo
 Markdown es un lenguaje de marcado ligero muy popular entre developers. Es usado en muchísimas plataformas que manejan texto plano (GitHub, foros, blogs, ...), y es muy común encontrar varios archivos en ese formato en cualquier tipo de repositorio (empezando por el tradicional README.md).
 
 Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de la información que se quiere compartir.
 
-Marhdown Links es una herramienta que usa Node.js, para leer y analizar archivos en formato Markdown, para verificar los links que contengan y reportar algunas estadísticas.
+md-links es una herramienta que usa Node.js, para leer y analizar archivos en formato Markdown, para verificar los links que contengan y reportar algunas estadísticas.
 
 ### Descripción del módulo
 ### Instrucciones de instalación/uso
@@ -33,7 +32,7 @@ const mdLinks = require('andu15-mdlinks');
 ### Ejemplos
 
 ### Importante!
-Todo lo relevante para que cualquier developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
+Esta librería esta hecha en node.js en conjunto con CommonJS Modules, es decir, se implemento <code>require/module.exports</code>
 ### Autor
-███▓▒░░ .ANDREA BLANCO. ░░▒▓███  
+███▓▒░░ . ANDREA BLANCO . ░░▒▓███  
 

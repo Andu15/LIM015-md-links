@@ -22,14 +22,14 @@ const okLinks = (arrayLinks) => {
 
 // ------------------------------ Mensaje de ayuda de consola ------------------------------
 const help = `
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█ ¿Necesitas ayuda?
-█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ Prueba los sgtes comandos:
-█░║║║╠─║─║─║║║║║╠─░█ --validate: Obtendras el href, title, file, status y message de cada link
-█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█ --stats: Obtendras el numero de links totales y unicos
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ --validate --stats: Obtendras el numero de links totales, unicos y rotos
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█ Prueba los sgtes comandos:
+█░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░█ --validate: Obtendras el href, title, file, status y message de cada link
+█░║║║╠─║─║─║║║║║╠─░█ --stats: Obtendras el numero de links totales y unicos
+█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█ --validate --stats: Obtendras el numero de links totales, unicos y rotos
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ 
 
 PDTA: No olvides que para ejecutar el programa es necesario ingresar:
-mdLinks <ruta> <comando>
+md-links <ruta> <comando>
 `;
 
 const errRouteDoesntExist = `
@@ -87,3 +87,28 @@ const linksDoesntExist = `
       --@@@@----------:  :----------@@@@--
               THERE ARE NO LINKS
 `;
+
+const otherReject = `
+                      /^--^\   
+                      \____/   
+                     /      \  
+     NOT FOUND!     |        | 
+                     \__  __/  
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|
+| | | | | | | | | | | | |\ \| |
+########################/ /####
+| | | | | | | | | | | | \/| | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+`;
+
+module.exports = {
+  totalLinks,
+  uniqueLinks,
+  brokenLinks,
+  okLinks,
+  help,
+  errRouteDoesntExist,
+  filesMdDoesntExist,
+  linksDoesntExist,
+  otherReject
+};
