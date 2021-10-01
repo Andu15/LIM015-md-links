@@ -15,7 +15,7 @@ Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas
 <code>**md-links**</code> es una herramienta que usa Node.js, para leer y analizar archivos en formato Markdown, para verificar los links que contengan y reportar algunas estadísticas.
 
 ### Descripción del módulo 💻
-Esta librería puedes instalarla desde [npm]() o desde [github](), a continuación te dejo los detalles:
+Esta librería puedes instalarla desde [npm](https://www.npmjs.com/package/andu15-mdlinks) o desde [github](https://github.com/Andu15/LIM015-md-links), a continuación te dejo los detalles:
 #### Instrucciones de instalación/uso
 ##### Instalación por npm
 `

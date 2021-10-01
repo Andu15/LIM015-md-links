@@ -1,6 +1,6 @@
 {
   "name": "andu15-mdlinks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "La función mdLinks te permitira verificar si existen archivos markdown y te devolverá un status acorde a los links que contenga",
   "main": "src/api/index.js",
   "directories": {
@@ -37,7 +37,9 @@
     "promises",
     "nodejs",
     "link",
-    "command"
+    "command",
+    "marked",
+    "chalk"
   ],
   "bin": {
     "md-links": "src/cli/cli.js"
