@@ -1,6 +1,15 @@
 language: node_js
 node_js:
-  - 14
+  - "14.17.6"
+branches:
+only:
+  - main
 cache: npm
+install:
+  - npm ci
 script:
-  - 'npm test'
+  - "npm test"
+notifications:
+  email:
+    recipients:
+      - estefania_8_3@hotmail.com
