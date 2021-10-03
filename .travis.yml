@@ -15,7 +15,3 @@ notifications:
   email:
     recipients:
       - estefania_8_3@hotmail.com
-before_install:
-  - npm i npm@7.23.0
-  - npm i node-fetch@2.6.1
-  - npm i marked@3.0.4
