@@ -18,12 +18,12 @@ Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas
 Esta librería puedes instalarla desde [npm](https://www.npmjs.com/package/andu15-mdlinks) o desde [github](https://github.com/Andu15/LIM015-md-links), a continuación te dejo los detalles:
 #### Instrucciones de instalación/uso
 ##### Instalación por npm
-`
-$ npm install andu15-mdlinks
-`
+`$ npm install andu15-mdlinks`  
+
+`$ npm i andu15-mdlinks`
 ##### Instalación por github
 `
-$ npm install Andu15-mdlinks/LIM015-md-links
+$ npm install Andu15/LIM015-md-links
 `
 ##### Usabilidad
 `
@@ -44,7 +44,7 @@ Conjunto de módulos donde:
 Aquí hemos divido el proceso en 2 modulos: 
 - **options.js**, posee pequeñas funciones donde obtiene un reporte de los links totales que existen en un archivo markdown, además de un conteo de los links unicos, links rotos y links ok. Como un plus contienen constantes con template strings que albergan arte ascii para personalizar los rejects del consumo de la funcion mdLinks.
 - **cli.js**, posee el metodo de process.argv de node para poder capturar el input del usuario y luego una serie de condicionales para ver por consola el consumo de la promesa.
-PDTA: Para varias los colores predeterminados de la consola, estoy usando una librería llamada <code>chalk</code>
+PDTA: Para variar los colores predeterminados de la consola, estoy usando una librería llamada <code>chalk</code>
 ### Ejemplos 📇
 El ejecutable de esta aplicación debe poder ejecutarse de la siguiente manera a través de la terminal:  
 `md-links <path> [options]`
@@ -109,6 +109,8 @@ El ejecutable de esta aplicación debe poder ejecutarse de la siguiente manera a
 Esta librería esta hecha en node.js en conjunto con CommonJS Modules, es decir, se implemento <code>require/module.exports</code>  
 
 [Licencia MIT](https://github.com/Andu15/LIM015-md-links/blob/main/LICENSE.md)
+
+[![Build Status](https://app.travis-ci.com/Andu15/LIM015-md-links.svg?branch=main)](https://app.travis-ci.com/Andu15/LIM015-md-links)
 
 * ___Inicio del proyecto:___ 08/09/2021  
 * ___Fin del proyecto:___ 30/09/2021

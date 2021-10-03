@@ -19,6 +19,7 @@ const traverseDirectoryFindFiles = (route) => {
   return container;
 };
 
+// falta la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link---
 // función para obtener un array con los objs(href, textContent y ruta) de archivos .md
 const traverseFilesToFindLinks = (route) => {
   let arrLinks = [];
@@ -30,6 +31,7 @@ const traverseFilesToFindLinks = (route) => {
         href: href,
         title: text,
         text: file,
+        // link: false
       }
       arrLinks.push(obj);
     };
@@ -39,13 +41,11 @@ const traverseFilesToFindLinks = (route) => {
 };
 
 // funcion con fetch(antes XMLHttpRequest) (con validate true)
-// falta la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link---
 const validateStatus = (route) => {
   const fetchPromises = traverseFilesToFindLinks(route).map((objPropLink) => {
     // console.log(objPropLink); OBJETO CON HREF(HTTPS), TITLE(NAME), TEXT(RUTA-FILE)
     return fetch(objPropLink.href)
       .then((res) => {
-        // console.log(res, 48);
         const objRes = {
           href: objPropLink.href,
           text: objPropLink.title,

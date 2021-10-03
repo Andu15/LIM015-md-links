@@ -23,7 +23,7 @@ if (myArgs.length === 1) {
     
     default:
       mdLinks(myArgs[0], { validate: false })
-        .then(resolve => console.table(resolve))
+        .then(resolve => console.log(resolve))
         .catch(reject => {
           if (reject === 'La ruta no existe') {
             console.log(chalk.red.bold(errRouteDoesntExist));
