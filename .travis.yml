@@ -4,11 +4,12 @@ node_js:
 branches:
 only:
   - main
-cache:
-  directories:
-    - node_modules
+cache: npm
 install:
   - npm ci
 script:
   - "npm test"
-
+notifications:
+  email:
+    recipients:
+      - estefania_8_3@hotmail.com
