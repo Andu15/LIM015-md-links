@@ -11,7 +11,4 @@ install:
   - npm ci
 script:
   - "npm test"
-notifications:
-  email:
-    recipients:
-      - estefania_8_3@hotmail.com
+
